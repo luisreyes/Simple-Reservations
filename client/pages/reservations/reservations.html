@@ -1,0 +1,56 @@
+<div ng-controller="ReservationsCtrl" class="reservations row">
+
+
+    <div class="col-sm-8">
+
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-pills" role="tablist">
+
+            <li role="presentation" class="active">
+                <a href="#active" data-toggle="tab">Active</a>
+            </li>
+
+            <li role="presentation">
+                <a href="#fulfilled" data-toggle="tab">Fulfilled</a>
+            </li>
+
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            <div role="tabpanel" class="tab-pane active" id="active">
+                <reservations-table class="table-responsive" status="active"></reservations-table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="fulfilled">
+                <reservations-table class="table-responsive" status="fulfilled"></reservations-table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <hr class="visible-xs"/>
+
+    <div class="col-sm-4">
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Reservation Form</h3>
+            </div>
+            <div class="panel-body">
+
+                <reservation-form></reservation-form>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>

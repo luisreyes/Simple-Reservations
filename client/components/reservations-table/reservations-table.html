@@ -1,0 +1,44 @@
+
+<table class="table table-condensed table-bordered">
+    <thead>
+    <tr>
+        <th style="width:30px;"></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th style="width:50px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr ng-if="!reservations.length">
+        <td colspan="4" class="text-center">
+            No Reservations
+        </td>
+    </tr>
+
+    <tr ng-repeat="reservation in reservations">
+        <td class="text-center">
+            <a href="/details/{{reservation._id}}"><span class="fa fa-caret-square-o-up"></span></a>
+        </td>
+        <td>
+            {{reservation.name}}
+        </td>
+        <td>
+            {{reservation.description}}
+        </td>
+        <td class="text-center">
+
+            <a ng-click="toggleReservationStatus(reservation)" title="{{reservation.status}} status">
+                <span class="fa"
+                      ng-class="{'fa-check green': reservation.status=='active', 'fa-reply orange': reservation.status=='fulfilled'}"
+                ></span>
+            </a>
+
+            <a ng-click="removeReservation(reservation)">
+                <span class="fa fa-trash red"></span>
+            </a>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
